@@ -1,0 +1,2 @@
+include ':app', ':af-android-sdk'
+rootProject.name='AndroidSDK'
