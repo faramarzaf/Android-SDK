@@ -65,7 +65,6 @@ class MyPreferences {
             getPreferences(context).edit().remove(key).apply()
         }
 
-
         fun getPreferences(context: Context): SharedPreferences {
             return context.getSharedPreferences(PREF_NAME, mode)
         }

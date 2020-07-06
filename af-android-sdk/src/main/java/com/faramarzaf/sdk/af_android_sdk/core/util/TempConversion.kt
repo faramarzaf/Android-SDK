@@ -1,5 +1,10 @@
 package com.faramarzaf.sdk.af_android_sdk.core.util
 
+/**
+ * @author Faramarz Afzali
+ * 14/jun/2020
+ */
+
 class TempConversion {
 
     object CToF {
@@ -10,7 +15,7 @@ class TempConversion {
 
     object CToK {
         fun convert(temp: Float): Float {
-            return temp+273.15f
+            return temp + 273.15f
         }
     }
 
@@ -22,7 +27,7 @@ class TempConversion {
 
     object FToK {
         fun convert(temp: Float): Float {
-            return temp+255.3722222222f
+            return temp + 255.3722222222f
         }
     }
 
@@ -34,7 +39,7 @@ class TempConversion {
 
     object KToF {
         fun convert(temp: Float): Float {
-            return temp -459.67f
+            return temp - 459.67f
         }
     }
 
