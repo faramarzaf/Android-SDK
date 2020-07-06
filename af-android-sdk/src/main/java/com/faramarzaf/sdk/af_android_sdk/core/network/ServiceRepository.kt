@@ -3,7 +3,10 @@ package com.faramarzaf.sdk.af_android_sdk.core.network
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
+/**
+ * @author Faramarz Afzali
+ * 6/july/2020
+ */
 class ServiceRepository {
 
     object ServiceBuilder {

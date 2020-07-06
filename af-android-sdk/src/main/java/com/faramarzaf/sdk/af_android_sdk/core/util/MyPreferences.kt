@@ -2,6 +2,7 @@ package com.faramarzaf.sdk.af_android_sdk.core.util
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.faramarzaf.sdk.af_android_sdk.BuildConfig
 
 /**
  * @author Faramarz Afzali
@@ -13,7 +14,7 @@ class MyPreferences {
 
     companion object Prefs {
 
-        private const val PREF_NAME: String = "TvitSharedPreferences"
+        private const val PREF_NAME: String = "SharedPreferences"
         private const val mode: Int = Context.MODE_PRIVATE
 
         fun writeBoolean(context: Context, key: String, value: Boolean) {
