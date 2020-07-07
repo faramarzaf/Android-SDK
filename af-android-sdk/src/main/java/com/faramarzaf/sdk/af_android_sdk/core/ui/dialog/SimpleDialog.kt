@@ -133,25 +133,16 @@ class SimpleDialog(
         rootViewDialogSimple?.setBackgroundResource(color)
     }
 
-    fun setPositiveBackground(color: Int) = apply {
+    fun setPositiveBackground(color: Int, textColor: Int) = apply {
         btn_dialog_positive?.setBackgroundResource(color)
+        btn_dialog_positive.setTextColor(textColor)
     }
 
-    fun setNegativeBackground(color: Int) = apply {
+    fun setNegativeBackground(color: Int, textColor: Int) = apply {
         btn_dialog_negative?.setBackgroundResource(color)
+        btn_dialog_negative.setTextColor(textColor)
     }
 
-    fun setTitleColor(color: Int) = apply {
-        txtview_alert_dialog_text.setTextColor(color)
-    }
-
-    fun setButtonPositiveColor(color: Int) = apply {
-        btn_dialog_positive.setTextColor(color)
-    }
-
-    fun setButtonNegativeColor(color: Int) = apply {
-        btn_dialog_negative.setTextColor(color)
-    }
 
     fun setNegativeButton(text: String) = apply { negativeButtonText = text }
 
@@ -171,7 +162,10 @@ class SimpleDialog(
             setCancelable(false)
             setCanceledOnTouchOutside(false)
         }
+    }
 
+    fun setTitleColor(color: Int) = apply {
+        txtview_alert_dialog_text.setTextColor(color)
     }
 
     fun showDialog() = apply {

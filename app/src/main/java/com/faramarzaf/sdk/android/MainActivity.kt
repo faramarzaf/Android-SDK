@@ -1,5 +1,6 @@
 package com.faramarzaf.sdk.android
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.faramarzaf.sdk.af_android_sdk.core.interfaces.DialogCallback
@@ -24,11 +25,11 @@ class MainActivity : AppCompatActivity() {
             .setPositiveButton("Text_Positive")
             .setText("This is a title")
             .showDialog()
+            .setTitleColor(Color.YELLOW)
             .setImageDialogBackground(R.drawable.ic_launcher_foreground)
-            .setNegativeBackground(R.drawable.shape_2)
-            .setPositiveBackground(R.drawable.shape_1)
+            .setNegativeBackground(R.drawable.shape_2, Color.RED)
+            .setPositiveBackground(R.drawable.shape_1, Color.RED)
             .setDialogBackground(R.drawable.shape_round_corner_dialog)
-
             .setCallBack(object : DialogCallback {
                 override fun onPositiveButtonClicked() {
                     // do your work
