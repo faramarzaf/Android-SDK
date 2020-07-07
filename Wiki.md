@@ -56,9 +56,31 @@ private var progressDialog: ProgressDialogCustom? = null
                 }
             }).showDialog()
 
-
 ```
 
+*Java usage*
+
+```java
+                 new SimpleDialog(MainActivity.this,
+                          R.drawable.shapeA,
+                          R.drawable.shapeB,
+                          R.drawable.shapeC,
+                          R.drawable.shapeD)
+                        .setText("Title")
+                        .setPositiveButton("Text_Positive")
+                        .setNegativeButton("Text_Negative")
+                        .setCallBack(new DialogCallback() {
+                            @Override
+                            public void onPositiveButtonClicked() {
+                              // do your work
+                            }
+
+                            @Override
+                            public void onNegativeButtonClicked() {
+                             // do your work
+                            }
+                        }).show();
+```
 
 
 
