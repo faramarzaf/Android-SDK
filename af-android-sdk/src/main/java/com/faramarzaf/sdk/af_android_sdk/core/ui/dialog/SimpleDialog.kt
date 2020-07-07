@@ -4,12 +4,22 @@ import android.content.Context
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.view.View
+import android.widget.LinearLayout
 import androidx.annotation.StringRes
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.ContextCompat
 import com.faramarzaf.sdk.af_android_sdk.R
 import com.faramarzaf.sdk.af_android_sdk.core.interfaces.DialogCallback
 import kotlinx.android.synthetic.main.dialog_simple.*
 
-class SimpleDialog(context: Context) : BaseDialog(context), View.OnClickListener {
+class SimpleDialog(
+    var myContext: Context,
+    var dialogBgSrc: Int,
+    var dialogPosSrc: Int,
+    var dialogNegSrc: Int,
+    var dialogImageSrc: Int
+) : BaseDialog(myContext), View.OnClickListener {
 
 
     private var dialogTitle: String? = null
@@ -17,12 +27,14 @@ class SimpleDialog(context: Context) : BaseDialog(context), View.OnClickListener
     private var positiveButtonText: String? = null
     private var dialogText: String? = null
     private var spannableStringBuilder: SpannableStringBuilder? = null
-
+    private var root: LinearLayout? = null
+    private var btnPositive: AppCompatButton? = null
+    private var btnNegative: AppCompatButton? = null
+    private var imageViewDialog: AppCompatImageView? = null
 
     override fun getDialogLayout(): Int {
         return R.layout.dialog_simple
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +58,7 @@ class SimpleDialog(context: Context) : BaseDialog(context), View.OnClickListener
         }
     }
 
-    fun initViews() {
+    private fun initViews() {
         if (dialogText != null) {
             txtview_alert_dialog_text.text = dialogText
         } else if (spannableStringBuilder != null) {
@@ -64,6 +76,15 @@ class SimpleDialog(context: Context) : BaseDialog(context), View.OnClickListener
         } else {
             btn_dialog_negative.visibility = View.GONE
         }
+        btnPositive = findViewById(R.id.btn_dialog_positive)
+        btnNegative = findViewById(R.id.btn_dialog_negative)
+        root = findViewById(R.id.rootViewDialogSimple)
+        imageViewDialog = findViewById(R.id.imageViewDialogSimple)
+
+        setDialogBackgroundColor(dialogBgSrc)
+        setImageBackground(dialogImageSrc)
+        setNegativeBackground(dialogNegSrc)
+        setPositiveBackground(dialogPosSrc)
     }
 
     override fun setTitle(@StringRes text: Int) {
@@ -71,47 +92,69 @@ class SimpleDialog(context: Context) : BaseDialog(context), View.OnClickListener
         setTitle(string)
     }
 
-    fun setTitle(text: String) {
+    private fun setTitle(text: String) {
         dialogTitle = text
     }
 
-    fun setNegativeButton(@StringRes text: Int, onNegativeButtonClickListener: View.OnClickListener) {
+    private fun setNegativeButton(@StringRes text: Int, onNegativeButtonClickListener: View.OnClickListener) {
         val string = context.resources.getString(text)
         setNegativeButton(string, onNegativeButtonClickListener)
     }
 
-    fun setNegativeButton(text: String, onNegativeButtonClickListener: View.OnClickListener) {
+    private fun setNegativeButton(
+        text: String,
+        onNegativeButtonClickListener: View.OnClickListener
+    ) {
         negativeButtonText = text
     }
 
-    fun setNegativeButton(@StringRes stringID: Int) {
+    private fun setNegativeButton(@StringRes stringID: Int) {
         negativeButtonText = context.resources.getString(stringID)
     }
 
 
-    fun setPositiveButton(@StringRes text: Int, onPositiveButtonClickListener: View.OnClickListener) {
+    private fun setPositiveButton(@StringRes text: Int, onPositiveButtonClickListener: View.OnClickListener) {
         val string = context.resources.getString(text)
         setPositiveButton(string, onPositiveButtonClickListener)
     }
 
-    fun setPositiveButton(@StringRes stringID: Int) {
+    private fun setPositiveButton(@StringRes stringID: Int) {
         positiveButtonText = context.resources.getString(stringID)
     }
 
-    fun setPositiveButton(text: String, onPositiveButtonClickListener: View.OnClickListener) {
+    private fun setPositiveButton(
+        text: String,
+        onPositiveButtonClickListener: View.OnClickListener
+    ) {
         positiveButtonText = text
     }
 
 
-    fun setText(@StringRes stringID: Int) {
+    private fun setText(@StringRes stringID: Int) {
         val string = context.resources.getString(stringID)
         setText(string)
     }
 
-    fun setText(stringBuilder: SpannableStringBuilder) {
+    private fun setText(stringBuilder: SpannableStringBuilder) {
         this.spannableStringBuilder = stringBuilder
     }
 
+
+    private fun setDialogBackgroundColor(color: Int) {
+        root?.setBackgroundDrawable(ContextCompat.getDrawable(myContext, color))
+    }
+
+    private fun setImageBackground(color: Int) {
+        imageViewDialog?.setBackgroundDrawable(ContextCompat.getDrawable(myContext, color))
+    }
+
+    private fun setPositiveBackground(color: Int) {
+        btnPositive?.setBackgroundDrawable(ContextCompat.getDrawable(myContext, color))
+    }
+
+    private fun setNegativeBackground(color: Int) {
+        btnNegative?.setBackgroundDrawable(ContextCompat.getDrawable(myContext, color))
+    }
 
     fun setNegativeButton(text: String) = apply { negativeButtonText = text }
 
@@ -119,11 +162,10 @@ class SimpleDialog(context: Context) : BaseDialog(context), View.OnClickListener
 
     fun setText(string: String) = apply { this.dialogText = string }
 
-    fun setCallBack(callback: DialogCallback) {
+    fun setCallBack(callback: DialogCallback) = apply {
         this.dialogCallback = callback
     }
 
     fun showDialog() = apply { show() }
-
 
 }

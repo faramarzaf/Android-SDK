@@ -6,11 +6,11 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/rootViewDialogSimple"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
-        android:background="@drawable/shape_round_corner_dialog"
+
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,17 +40,17 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_dialog_negative"
-                style="@style/ButtonDialogStyle"
+
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_round_corner_dialog"
+
                 android:textColor="#435" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_dialog_positive"
-                style="@style/ButtonDialogStyle"
+
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -67,9 +67,10 @@
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
         android:background="#242"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+        android:id="@+id/imageViewDialogSimple"
+        app:layout_constraintBottom_toTopOf="@+id/rootViewDialogSimple"
+        app:layout_constraintEnd_toEndOf="@+id/rootViewDialogSimple"
+        app:layout_constraintStart_toStartOf="@+id/rootViewDialogSimple"
+        app:layout_constraintTop_toTopOf="@+id/rootViewDialogSimple" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

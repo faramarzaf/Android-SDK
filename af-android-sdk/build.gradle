@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1005
-        versionName "1.0.05"
+        versionCode 1006
+        versionName "1.0.06"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
         multiDexEnabled true
@@ -54,7 +54,6 @@ dependencies {
 
     //google
     implementation 'com.google.guava:guava:29.0-android'
-
 
     // Connections
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
