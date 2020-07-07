@@ -34,28 +34,29 @@ private var progressDialog: ProgressDialogCustom? = null
 
 **Simple Dialog**
 
-```kotlin
+```kotlin  
 
-        SimpleDialog(
-            this, //context
-            R.drawable.shapeA,// background of rootLayout
-            R.drawable.shapeB,// background of positive button
-            R.drawable.shapeC,// background of negative button
-            R.drawable.ShapeD // image or background src of dialog
-        )
+  SimpleDialog(this)
+            .cancelable(true)
             .setNegativeButton("Text_Negative")
             .setPositiveButton("Text_Positive")
             .setText("This is a title")
+            .showDialog()
+            .setTitleColor(Color.YELLOW)
+            .setImageDialogBackground(R.drawable.ic_launcher_foreground)
+            .setNegativeBackground(R.drawable.shape_2, Color.RED)
+            .setPositiveBackground(R.drawable.shape_1, Color.RED)
+            .setDialogBackground(R.drawable.shape_round_corner_dialog)
             .setCallBack(object : DialogCallback {
                 override fun onPositiveButtonClicked() {
                     // do your work
                 }
 
                 override fun onNegativeButtonClicked() {
-                     // do your work
+                    // do your work
                 }
-            }).showDialog()
-
+            })
+            
 ```
 
 *Java usage*
