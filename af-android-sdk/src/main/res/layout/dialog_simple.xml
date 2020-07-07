@@ -40,17 +40,14 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_dialog_negative"
-
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
-
-                android:textColor="#435" />
+                />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_dialog_positive"
-
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"

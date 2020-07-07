@@ -166,6 +166,17 @@ class SimpleDialog(
         this.dialogCallback = callback
     }
 
+    fun cancelable(cancelable: Boolean) = apply{
+        if (cancelable) {
+            setCancelable(true)
+            setCanceledOnTouchOutside(true)
+        } else {
+            setCancelable(false)
+            setCanceledOnTouchOutside(false)
+        }
+
+    }
+
     fun showDialog() = apply { show() }
 
 }
