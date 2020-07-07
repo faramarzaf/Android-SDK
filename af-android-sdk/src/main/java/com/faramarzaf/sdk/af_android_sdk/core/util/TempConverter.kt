@@ -5,7 +5,7 @@ package com.faramarzaf.sdk.af_android_sdk.core.util
  * 14/jun/2020
  */
 
-class TempConversion {
+class TempConverter {
 
     object CToF {
         fun convert(temp: Float): Float {

@@ -4,33 +4,26 @@ import android.content.Context
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.view.View
-import android.widget.LinearLayout
 import androidx.annotation.StringRes
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.content.ContextCompat
 import com.faramarzaf.sdk.af_android_sdk.R
 import com.faramarzaf.sdk.af_android_sdk.core.interfaces.DialogCallback
 import kotlinx.android.synthetic.main.dialog_simple.*
 
-class SimpleDialog(
-    var myContext: Context,
-    var dialogBgSrc: Int,
-    var dialogPosSrc: Int,
-    var dialogNegSrc: Int,
-    var dialogImageSrc: Int
-) : BaseDialog(myContext), View.OnClickListener {
+/**
+ * @author Faramarz Afzali
+ * 6/july/2020
+ */
 
+
+class SimpleDialog(
+    myContext: Context
+) : BaseDialog(myContext), View.OnClickListener {
 
     private var dialogTitle: String? = null
     private var negativeButtonText: String? = null
     private var positiveButtonText: String? = null
     private var dialogText: String? = null
     private var spannableStringBuilder: SpannableStringBuilder? = null
-    private var root: LinearLayout? = null
-    private var btnPositive: AppCompatButton? = null
-    private var btnNegative: AppCompatButton? = null
-    private var imageViewDialog: AppCompatImageView? = null
 
     override fun getDialogLayout(): Int {
         return R.layout.dialog_simple
@@ -76,15 +69,7 @@ class SimpleDialog(
         } else {
             btn_dialog_negative.visibility = View.GONE
         }
-        btnPositive = findViewById(R.id.btn_dialog_positive)
-        btnNegative = findViewById(R.id.btn_dialog_negative)
-        root = findViewById(R.id.rootViewDialogSimple)
-        imageViewDialog = findViewById(R.id.imageViewDialogSimple)
 
-        setDialogBackgroundColor(dialogBgSrc)
-        setImageBackground(dialogImageSrc)
-        setNegativeBackground(dialogNegSrc)
-        setPositiveBackground(dialogPosSrc)
     }
 
     override fun setTitle(@StringRes text: Int) {
@@ -140,20 +125,32 @@ class SimpleDialog(
     }
 
 
-    private fun setDialogBackgroundColor(color: Int) {
-        root?.setBackgroundDrawable(ContextCompat.getDrawable(myContext, color))
+    fun setImageDialogBackground(color: Int) = apply {
+        imageViewDialogSimple?.setBackgroundResource(color)
     }
 
-    private fun setImageBackground(color: Int) {
-        imageViewDialog?.setBackgroundDrawable(ContextCompat.getDrawable(myContext, color))
+    fun setDialogBackground(color: Int) = apply {
+        rootViewDialogSimple?.setBackgroundResource(color)
     }
 
-    private fun setPositiveBackground(color: Int) {
-        btnPositive?.setBackgroundDrawable(ContextCompat.getDrawable(myContext, color))
+    fun setPositiveBackground(color: Int) = apply {
+        btn_dialog_positive?.setBackgroundResource(color)
     }
 
-    private fun setNegativeBackground(color: Int) {
-        btnNegative?.setBackgroundDrawable(ContextCompat.getDrawable(myContext, color))
+    fun setNegativeBackground(color: Int) = apply {
+        btn_dialog_negative?.setBackgroundResource(color)
+    }
+
+    fun setTitleColor(color: Int) = apply {
+        txtview_alert_dialog_text.setTextColor(color)
+    }
+
+    fun setButtonPositiveColor(color: Int) = apply {
+        btn_dialog_positive.setTextColor(color)
+    }
+
+    fun setButtonNegativeColor(color: Int) = apply {
+        btn_dialog_negative.setTextColor(color)
     }
 
     fun setNegativeButton(text: String) = apply { negativeButtonText = text }
@@ -166,7 +163,7 @@ class SimpleDialog(
         this.dialogCallback = callback
     }
 
-    fun cancelable(cancelable: Boolean) = apply{
+    fun cancelable(cancelable: Boolean) = apply {
         if (cancelable) {
             setCancelable(true)
             setCanceledOnTouchOutside(true)
@@ -177,6 +174,8 @@ class SimpleDialog(
 
     }
 
-    fun showDialog() = apply { show() }
+    fun showDialog() = apply {
+        super.show()
+    }
 
 }

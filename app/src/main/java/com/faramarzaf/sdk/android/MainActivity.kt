@@ -18,17 +18,17 @@ class MainActivity : AppCompatActivity() {
 
 
     fun showAlertDialog() {
-        SimpleDialog(
-            this,
-            R.drawable.shape_2,
-            R.drawable.shape_round_corner_button,
-            R.drawable.shape_1,
-            R.drawable.shape_2
-        )
+        SimpleDialog(this)
             .cancelable(true)
             .setNegativeButton("Text_Negative")
             .setPositiveButton("Text_Positive")
             .setText("This is a title")
+            .showDialog()
+            .setImageDialogBackground(R.drawable.ic_launcher_foreground)
+            .setNegativeBackground(R.drawable.shape_2)
+            .setPositiveBackground(R.drawable.shape_1)
+            .setDialogBackground(R.drawable.shape_round_corner_dialog)
+
             .setCallBack(object : DialogCallback {
                 override fun onPositiveButtonClicked() {
                     // do your work
@@ -37,7 +37,9 @@ class MainActivity : AppCompatActivity() {
                 override fun onNegativeButtonClicked() {
                     // do your work
                 }
-            }).showDialog()
+            })
+
+
     }
 
 }
