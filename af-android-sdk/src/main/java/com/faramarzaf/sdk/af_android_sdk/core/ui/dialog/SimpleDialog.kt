@@ -1,8 +1,10 @@
 package com.faramarzaf.sdk.af_android_sdk.core.ui.dialog
 
 import android.content.Context
+import android.graphics.Typeface
 import android.os.Bundle
 import android.text.SpannableStringBuilder
+import android.util.Log
 import android.view.View
 import androidx.annotation.StringRes
 import com.faramarzaf.sdk.af_android_sdk.R
@@ -172,4 +174,18 @@ class SimpleDialog(
         super.show()
     }
 
+    fun setTypeface(context: Context, asset: String) = apply {
+        var tf: Typeface? = null
+        try {
+            tf = Typeface.createFromAsset(context.assets, asset)
+        } catch (e: Exception) {
+            Log.e(
+                "***SimpleDialog***",
+                "Could not get typeface: ${e.message} place your custom fonts in assets folder"
+            )
+        }
+        txtview_alert_dialog_text.typeface = tf
+        btn_dialog_positive.typeface = tf
+        btn_dialog_negative.typeface = tf
+    }
 }
