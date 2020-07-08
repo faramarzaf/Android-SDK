@@ -175,10 +175,10 @@ class SimpleDialog(
         super.show()
     }
 
-    fun setTypeface(context: Context, asset: String) = apply {
+    fun setTypeface(asset: String) = apply {
         var tf: Typeface? = null
         try {
-            tf = Typeface.createFromAsset(context.assets, asset)
+            tf = Typeface.createFromAsset(this.context.assets, asset)
         } catch (e: Exception) {
             Log.e(
                 "***SimpleDialog***",

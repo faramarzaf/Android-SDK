@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             .setText("This is a title")
             .showDialog()
             .setTitleColor(Color.YELLOW)
-            .setTypeface(this, "vazir_thin.ttf")
+            .setTypeface("vazir_thin.ttf")
             .setTextSize(28f, 12f)
             .setImageDialogBackground(R.drawable.ic_launcher_foreground)
             .setDialogBackground(R.drawable.shape_round_corner_dialog)
