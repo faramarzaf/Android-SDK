@@ -27,10 +27,11 @@ class MainActivity : AppCompatActivity() {
             .showDialog()
             .setTitleColor(Color.YELLOW)
             .setImageDialogBackground(R.drawable.ic_launcher_foreground)
-            .setNegativeBackground(R.drawable.shape_2, Color.rgb(255,255,255))
+            .setNegativeBackground(R.drawable.shape_2, Color.rgb(255, 255, 255))
             .setPositiveBackground(R.drawable.shape_1, Color.RED)
             .setDialogBackground(R.drawable.shape_round_corner_dialog)
-            .setTypeface(this,"vazir_thin.ttf")
+            .setTypeface(this, "vazir_thin.ttf")
+            .setTextSize(28f, 12f)
             .setCallBack(object : DialogCallback {
                 override fun onPositiveButtonClicked() {
                     // do your work
