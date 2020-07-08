@@ -2,12 +2,9 @@ package com.faramarzaf.sdk.android
 
 import android.graphics.Color
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.faramarzaf.sdk.af_android_sdk.core.interfaces.CallbackPopUpMenu
 import com.faramarzaf.sdk.af_android_sdk.core.interfaces.DialogCallback
 import com.faramarzaf.sdk.af_android_sdk.core.ui.dialog.SimpleDialog
-import com.faramarzaf.sdk.af_android_sdk.core.ui.menu.SimpleMenuInflater
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -17,15 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btnShow.setOnClickListener {
-            //   showAlertDialog()
-
-            SimpleMenuInflater.iconPopUpMenu(this, btnShow, R.menu.popup,
-                object : CallbackPopUpMenu {
-                    override fun onClick(title: String) {
-                        Toast.makeText(applicationContext, title, Toast.LENGTH_SHORT).show()
-                    }
-                })
-
+            showAlertDialog()
         }
     }
 
@@ -53,8 +42,6 @@ class MainActivity : AppCompatActivity() {
                     // do your work
                 }
             })
-
-
     }
 
 }
