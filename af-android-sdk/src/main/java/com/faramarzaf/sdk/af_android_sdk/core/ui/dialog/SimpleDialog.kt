@@ -190,10 +190,10 @@ class SimpleDialog(
         btn_dialog_negative.typeface = tf
     }
 
-    fun setTextSize(sizeTitle: Float, sizeButtons: Float) = apply {
+    fun setTextSize(sizeTitle: Float, titleButtons: Float) = apply {
         txtview_alert_dialog_text.setTextSize(TypedValue.COMPLEX_UNIT_SP, sizeTitle)
-        btn_dialog_positive.setTextSize(TypedValue.COMPLEX_UNIT_SP, sizeButtons)
-        btn_dialog_negative.setTextSize(TypedValue.COMPLEX_UNIT_SP, sizeButtons)
+        btn_dialog_positive.setTextSize(TypedValue.COMPLEX_UNIT_SP, titleButtons)
+        btn_dialog_negative.setTextSize(TypedValue.COMPLEX_UNIT_SP, titleButtons)
     }
 
 }
