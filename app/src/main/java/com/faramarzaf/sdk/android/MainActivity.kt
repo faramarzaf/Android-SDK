@@ -19,12 +19,13 @@ class MainActivity : AppCompatActivity() {
         btnShow.setOnClickListener {
             //   showAlertDialog()
 
-            val mylist = listOf("Title1", "Title1", "Title3")
-            SimpleMenuInflater.showPopUpMenu(this, mylist, btnShow, object : CallbackPopUpMenu {
-                override fun onClick(title: String) {
-                    Toast.makeText(applicationContext, title, Toast.LENGTH_SHORT).show()
-                }
-            })
+            SimpleMenuInflater.iconPopUpMenu(this, btnShow, R.menu.popup,
+                object : CallbackPopUpMenu {
+                    override fun onClick(title: String) {
+                        Toast.makeText(applicationContext, title, Toast.LENGTH_SHORT).show()
+                    }
+                })
+
         }
     }
 
