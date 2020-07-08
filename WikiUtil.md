@@ -2,3 +2,4 @@
 
 * MyPreferences  
 * TempConverter  
+* ClickGuard  
