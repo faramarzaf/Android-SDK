@@ -36,17 +36,19 @@ private var progressDialog: ProgressDialogCustom? = null
 
 ```kotlin  
 
-  SimpleDialog(this)
+        SimpleDialog(this)
             .cancelable(true)
             .setNegativeButton("Text_Negative")
             .setPositiveButton("Text_Positive")
             .setText("This is a title")
             .showDialog()
             .setTitleColor(Color.YELLOW)
+            .setTypeface(this, "assetFont.ttf")
+            .setTextSize(28f, 12f)
             .setImageDialogBackground(R.drawable.ic_launcher_foreground)
-            .setNegativeBackground(R.drawable.shape_2, Color.RED)
-            .setPositiveBackground(R.drawable.shape_1, Color.RED)
-            .setDialogBackground(R.drawable.shape_round_corner_dialog)
+            .setDialogBackground(R.drawable.shape1)
+            .setPositiveBackground(R.drawable.shape_2, Color.RED)
+            .setNegativeBackground(R.drawable.shape_3, Color.rgb(255, 255, 255))
             .setCallBack(object : DialogCallback {
                 override fun onPositiveButtonClicked() {
                     // do your work
@@ -59,28 +61,22 @@ private var progressDialog: ProgressDialogCustom? = null
             
 ```
 
-*Java usage*
 
-```java
-                 new SimpleDialog(MainActivity.this,
-                          R.drawable.shapeA,
-                          R.drawable.shapeB,
-                          R.drawable.shapeC,
-                          R.drawable.shapeD)
-                        .setText("Title")
-                        .setPositiveButton("Text_Positive")
-                        .setNegativeButton("Text_Negative")
-                        .setCallBack(new DialogCallback() {
-                            @Override
-                            public void onPositiveButtonClicked() {
-                              // do your work
-                            }
+**Menu**
 
-                            @Override
-                            public void onNegativeButtonClicked() {
-                             // do your work
-                            }
-                        }).show();
+
+
+* Simple Popup Menu
+
+
+```kotlin
+          val mylist = listOf("Title1", "Title1", "Title3")
+            SimpleMenuInflater.showPopUpMenu(this, mylist, view, object : CallbackPopUpMenu {
+                override fun onClick(title: String) {
+                    Toast.makeText(this, title, Toast.LENGTH_SHORT).show()
+                }
+            })
+
 ```
 
 
