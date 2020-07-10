@@ -109,18 +109,20 @@ class StringHelper {
             return "$out تا "
         }
 
-        fun getDurationString(seconds: Long): String {
+        fun getEnglishDurationString(seconds: Long): String {
             var seconds = seconds
             val hours = seconds / 3600
             val minutes = seconds % 3600 / 60
             seconds = seconds % 60
-            return toPersianNumber(
-                twoDigitString(
-                    minutes
-                ) + " : " + twoDigitString(
-                    seconds
-                )
-            )
+            return twoDigitString(minutes) + " : " + twoDigitString(seconds)
+        }
+
+        fun getFarsiDurationString(seconds: Long): String {
+            var seconds = seconds
+            val hours = seconds / 3600
+            val minutes = seconds % 3600 / 60
+            seconds = seconds % 60
+            return toPersianNumber(twoDigitString(minutes) + " : " + twoDigitString(seconds))
         }
 
         fun twoDigitString(number: Long): String {
