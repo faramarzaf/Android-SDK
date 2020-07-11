@@ -5,6 +5,11 @@ import android.os.CountDownTimer
 import android.widget.TextView
 import com.faramarzaf.sdk.af_android_sdk.core.helper.StringHelper
 
+/**
+ * @author Faramarz Afzali
+ * 10/july/2020
+ */
+
 class CounterDown {
 
     companion object {

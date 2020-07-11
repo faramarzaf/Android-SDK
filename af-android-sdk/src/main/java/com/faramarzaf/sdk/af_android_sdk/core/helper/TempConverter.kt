@@ -1,4 +1,4 @@
-package com.faramarzaf.sdk.af_android_sdk.core.util
+package com.faramarzaf.sdk.af_android_sdk.core.helper
 
 /**
  * @author Faramarz Afzali
