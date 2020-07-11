@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1010
-        versionName "1.0.10"
+        versionCode 1011
+        versionName "1.0.11"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
         multiDexEnabled true
@@ -18,13 +18,10 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            manifestPlaceholders = [crashlyticsEnabled: true]
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
-            ext.enableCrashlytics = false
-            manifestPlaceholders = [crashlyticsEnabled: false]
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

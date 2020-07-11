@@ -1,4 +1,4 @@
-package com.faramarzaf.sdk.af_android_sdk.core.ui;
+package com.faramarzaf.sdk.af_android_sdk.core.ui.dialog;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat;
 
 import com.faramarzaf.sdk.af_android_sdk.R;
 import com.faramarzaf.sdk.af_android_sdk.core.interfaces.DialogCallback;
-import com.faramarzaf.sdk.af_android_sdk.core.ui.dialog.BaseDialog;
 
 public class ProgressDialogCustom extends BaseDialog {
 
