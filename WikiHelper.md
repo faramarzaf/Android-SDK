@@ -9,3 +9,4 @@
  * ScreenHelper
  * ValidateHelper
  * VibrateHelper
+ * TextViewHelper
