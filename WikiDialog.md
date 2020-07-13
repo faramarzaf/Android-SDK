@@ -38,56 +38,58 @@ private var progressDialog: ProgressDialogCustom? = null
 
         SimpleDialog(this)
             .cancelable(true)
-            .setNegativeButton("Text_Negative")
-            .setPositiveButton("Text_Positive")
-            .setText("This is a title")
+            .setText("Description")
+            .setPositiveButton("Yes")
+            .setNegativeButton("no")
             .showDialog()
-            .setTitleColor(Color.YELLOW)
-            .setTypeface(this, "assetFont.ttf")
-            .setTextSize(28f, 12f)
-            .setImageDialogBackground(R.drawable.ic_launcher_foreground)
-            .setDialogBackground(R.drawable.shape1)
-            .setPositiveBackground(R.drawable.shape_2, Color.RED)
-            .setNegativeBackground(R.drawable.shape_3, Color.rgb(255, 255, 255))
+            .setTypeface("font.ttf")
+            .setTitleColor(Color.rgb(0, 0, 0))
+            .setTextSize(16f, 13f)
+            .setPositiveBackground(R.drawable.shapeA, Color.WHITE)
+            .setNegativeBackground(R.drawable.shapeA, Color.WHITE)
+            .setImageDialogBackground(R.drawable.ic)
+            .setDialogBackground(R.drawable.shape)
             .setCallBack(object : DialogCallback {
                 override fun onPositiveButtonClicked() {
-                    // do your work
+                  // do your work
                 }
 
                 override fun onNegativeButtonClicked() {
-                    // do your work
+                     // do your work
+
                 }
             })
+
             
 ```
 
 *Java usage*  
 ```java
 
-              new SimpleDialog(this)
+new SimpleDialog(tihs)
                         .cancelable(true)
-                        .setNegativeButton("Text_Negative")
-                        .setPositiveButton("Text_Positive")
-                        .setText("This is a title")
+                        .setText("Title")
+                        .setPositiveButton("Yes")
+                        .setNegativeButton("No")
                         .showDialog()
-                        .setTitleColor(Color.YELLOW)
                         .setTypeface("font.ttf")
-                        .setTextSize(28f, 12f)
-                        .setImageDialogBackground(R.drawable.ic_launcher_foreground)
-                        .setDialogBackground(R.drawable.bg)
-                        .setPositiveBackground(R.drawable.bg, Color.RED)
-                        .setNegativeBackground(R.drawable.bg, Color.rgb(255, 255, 255))
+                        .setTitleColor(Color.rgb(0, 0, 0))
+                        .setTextSize(16, 13)
+                        .setPositiveBackground(R.drawable.shapeA, Color.WHITE)
+                        .setNegativeBackground(R.drawable.shapeB, Color.WHITE)
+                        .setImageDialogBackground(R.drawable.ic)
+                        .setDialogBackground(R.drawable.shape)
                         .setCallBack(new DialogCallback() {
-                    @Override
-                    public void onPositiveButtonClicked() {
-                          // do your work
-                    }
+                            @Override
+                            public void onPositiveButtonClicked() {
+                               // do your work
+                            }
 
-                    @Override
-                    public void onNegativeButtonClicked() {
-                         // do your work
-                    }
-                });
+                            @Override
+                            public void onNegativeButtonClicked() {
+                                          // do your work
+                            }
+                        });
 
 ```
 
