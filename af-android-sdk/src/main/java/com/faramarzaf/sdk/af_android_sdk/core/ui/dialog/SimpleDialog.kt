@@ -19,8 +19,8 @@ import kotlinx.android.synthetic.main.dialog_simple.*
 
 
 class SimpleDialog(
-    myContext: Context
-) : BaseDialog(myContext), View.OnClickListener {
+    context: Context
+) : BaseDialog(context), View.OnClickListener {
 
     private var dialogTitle: String? = null
     private var negativeButtonText: String? = null
