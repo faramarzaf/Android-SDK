@@ -1,12 +1,12 @@
 package com.faramarzaf.sdk.af_android_sdk.core.enums
 
 import com.google.android.material.snackbar.Snackbar
-/*
 
-enum class EnumSnackBar constructor(var valueStr: String?, val value: Int?) {
 
-    SHORT("Snackbar.LENGTH_SHORT", Snackbar.LENGTH_SHORT),
+enum class EnumSnackBar constructor(var valueStr: String?, val value: Int) {
+
     UNDEFINE("UNDEFINE", -1),
+    SHORT("Snackbar.LENGTH_SHORT", Snackbar.LENGTH_SHORT),
     LONG("Snackbar.LENGTH_LONG", Snackbar.LENGTH_LONG);
 
     companion object {
@@ -26,7 +26,7 @@ enum class EnumSnackBar constructor(var valueStr: String?, val value: Int?) {
             return UNDEFINE
         }
 
-        operator fun get(value: Int?): EnumSnackBar {
+        operator fun get(value: Int): EnumSnackBar {
 
             if (value == null) {
                 return UNDEFINE
@@ -43,4 +43,4 @@ enum class EnumSnackBar constructor(var valueStr: String?, val value: Int?) {
         }
     }
 }
-*/
+

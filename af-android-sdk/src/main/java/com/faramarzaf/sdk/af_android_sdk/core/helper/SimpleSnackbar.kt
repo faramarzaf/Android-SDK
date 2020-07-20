@@ -19,18 +19,19 @@ class SimpleSnackbar {
     companion object {
 
         private lateinit var snackbar: Snackbar
-
+        lateinit var enum: EnumSnackBar
         /**
          *Simple snackbar without action just include text
          */
 
         fun show(view: View, text: String, backgroundColor: Int, textColor: Int, isShortTime: Boolean) {
-            val enum: Int?
+
             if (isShortTime)
-                enum = EnumSnackBar.SHORT.value
+                enum = EnumSnackBar[EnumSnackBar.SHORT.value]
             else
-                enum = EnumSnackBar.LONG.value
-            snackbar = Snackbar.make(view, text, enum)
+                enum = EnumSnackBar[EnumSnackBar.LONG.value]
+
+            snackbar = Snackbar.make(view, text, enum.value)
             val snackBarRootView = snackbar.view
             val snackbarText = snackBarRootView.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
             snackBarRootView.setBackgroundColor(backgroundColor)
@@ -42,12 +43,13 @@ class SimpleSnackbar {
          *Simple snackbar with font preferences
          */
         fun show(context: Context, view: View, text: String, asset: String, backgroundColor: Int, textColor: Int, isShortTime: Boolean) {
-            val enum: Int?
+
             if (isShortTime)
-                enum = EnumSnackBar.SHORT.value
+                enum = EnumSnackBar[EnumSnackBar.SHORT.value]
             else
-                enum = EnumSnackBar.LONG.value
-            snackbar = Snackbar.make(view, text, enum)
+                enum = EnumSnackBar[EnumSnackBar.LONG.value]
+
+            snackbar = Snackbar.make(view, text, enum.value)
             val snackBarRootView = snackbar.view
             val snackbarText = snackBarRootView.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
             val snackbarActionText = snackBarRootView.findViewById<TextView>(com.google.android.material.R.id.snackbar_action)
@@ -62,13 +64,13 @@ class SimpleSnackbar {
          */
 
         fun show(view: View, text: String, textAction: String, backgroundColor: Int, textColor: Int, textActionColor: Int, isShortTime: Boolean, callback: CallbackSnackBar) {
-            val enum: Int?
-            if (isShortTime)
-                enum = EnumSnackBar.SHORT.value
-            else
-                enum = EnumSnackBar.LONG.value
 
-            snackbar = Snackbar.make(view, text, enum)
+            if (isShortTime)
+                enum = EnumSnackBar[EnumSnackBar.SHORT.value]
+            else
+                enum = EnumSnackBar[EnumSnackBar.LONG.value]
+
+            snackbar = Snackbar.make(view, text, enum.value)
             val snackBarRootView = snackbar.view
             val snackbarText = snackBarRootView.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
             val snackbarActionText = snackBarRootView.findViewById<TextView>(com.google.android.material.R.id.snackbar_action)
@@ -87,13 +89,13 @@ class SimpleSnackbar {
          */
 
         fun show(context: Context, view: View, text: String, textAction: String, backgroundColor: Int, textColor: Int, textActionColor: Int, asset: String, isShortTime: Boolean, callback: CallbackSnackBar) {
-            val enum: Int?
-            if (isShortTime)
-                enum = EnumSnackBar.SHORT.value
-            else
-                enum = EnumSnackBar.LONG.value
 
-            snackbar = Snackbar.make(view, text, enum)
+            if (isShortTime)
+                enum = EnumSnackBar[EnumSnackBar.SHORT.value]
+            else
+                enum = EnumSnackBar[EnumSnackBar.LONG.value]
+
+            snackbar = Snackbar.make(view, text, enum.value)
             val snackBarRootView = snackbar.view
             val snackbarText = snackBarRootView.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
             val snackbarActionText = snackBarRootView.findViewById<TextView>(com.google.android.material.R.id.snackbar_action)
