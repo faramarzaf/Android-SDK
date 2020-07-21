@@ -19,7 +19,7 @@ class SimpleSnackbar {
     companion object {
 
         private lateinit var snackbar: Snackbar
-        lateinit var enum: EnumSnackBar
+        private lateinit var enum: EnumSnackBar
         /**
          *Simple snackbar without action just include text
          */
