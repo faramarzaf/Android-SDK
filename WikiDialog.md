@@ -93,3 +93,22 @@ new SimpleDialog(tihs)
 
 ```
 
+**PublicDialog**    
+
+```kotlin
+            PublicDialog.yesNoDialog(context, "Title", "Message", "text_positive", "text_negative", R.drawable.icon, object : DialogCallback {
+                override fun onPositiveButtonClicked() {
+                    // do your work
+                }
+
+                override fun onNegativeButtonClicked() {
+                    // do your work
+                }
+            })
+
+
+```
+
+
+
+
