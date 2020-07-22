@@ -29,6 +29,4 @@
         app:pet_textColor="@color/black"
         app:pet_textSize="8sp"
         />
-
-
 </LinearLayout>
