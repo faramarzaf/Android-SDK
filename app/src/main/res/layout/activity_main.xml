@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/root"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="match_parent"
-        android:text="click"
         android:id="@+id/btn_click"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="click" />
+
+    <com.faramarzaf.sdk.af_android_sdk.core.ui.customview.PasswordEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/shape_round_corner_button"
+        android:backgroundTint="#8694F1"
+        android:padding="4dp"
+        app:pet_backgroundIconColor="#D81B60"
+        app:pet_customFontFamily="vazir_thin.ttf"
+        app:pet_hint="Password here..."
+        app:pet_srcIconEditText="@drawable/ic_password_hide"
+        app:pet_textColor="@color/black"
+        app:pet_textSize="5sp"
+        />
 
 
 </LinearLayout>
