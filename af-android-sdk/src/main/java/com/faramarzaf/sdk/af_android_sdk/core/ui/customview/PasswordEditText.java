@@ -32,7 +32,8 @@ public class PasswordEditText extends LinearLayout {
     private TypedArray typedArray;
     private ImageView iconPassword;
     private EditText mainEditText;
-    private Drawable srcIcon;
+    private Drawable srcIconHide;
+    private Drawable srcIconShow;
     private int defaultTextColor;
     private int backgroundIconColor;
     private float textSize;
@@ -51,7 +52,8 @@ public class PasswordEditText extends LinearLayout {
         super(context, attrs);
         init(context);
         setHint(attrs);
-        setIconResource(attrs);
+        setIconShowResource(attrs);
+        setIconHideResource(attrs);
         setBackgroundIconColor(attrs);
         setTextSize(attrs);
         setTextColor(attrs);
@@ -84,13 +86,19 @@ public class PasswordEditText extends LinearLayout {
         typedArray.recycle();
     }
 
-    private void setIconResource(AttributeSet set) {
+    private void setIconShowResource(AttributeSet set) {
         checkNullSet(set);
         typedArray = getContext().obtainStyledAttributes(set, R.styleable.PasswordEditText);
-        srcIcon = typedArray.getDrawable(R.styleable.PasswordEditText_pet_srcIconEditText);
-        iconPassword.setImageDrawable(srcIcon);
+        srcIconShow = typedArray.getDrawable(R.styleable.PasswordEditText_pet_srcIconShow);
+        iconPassword.setImageDrawable(srcIconShow);
     }
 
+    private void setIconHideResource(AttributeSet set) {
+        checkNullSet(set);
+        typedArray = getContext().obtainStyledAttributes(set, R.styleable.PasswordEditText);
+        srcIconHide = typedArray.getDrawable(R.styleable.PasswordEditText_pet_srcIconHide);
+        iconPassword.setImageDrawable(srcIconHide);
+    }
 
     private void setBackgroundIconColor(AttributeSet set) {
         checkNullSet(set);
@@ -119,12 +127,12 @@ public class PasswordEditText extends LinearLayout {
         iconPassword.setOnTouchListener((v, event) -> {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_UP:
-                    iconPassword.setImageResource(R.drawable.ic_password_hide);
+                    iconPassword.setImageDrawable(srcIconHide);
                     mainEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
                     mainEditText.setSelection(mainEditText.getText().length()); // to prevent move cursor to the first of text view
                     break;
                 case MotionEvent.ACTION_DOWN:
-                    iconPassword.setImageResource(R.drawable.ic_password_show);
+                    iconPassword.setImageDrawable(srcIconShow);
                     mainEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                     mainEditText.setSelection(mainEditText.getText().length());
                     break;
