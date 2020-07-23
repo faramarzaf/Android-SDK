@@ -15,7 +15,7 @@ class StringHelper {
         }
 
 
-        fun StringIsEmptyOrNull(string: String?): Boolean {
+        fun stringIsEmptyOrNull(string: String?): Boolean {
             try {
                 return string == null || string.length == 0 || string.isEmpty() || string == "null" || string == ""
             } catch (ex: Exception) {
@@ -27,30 +27,6 @@ class StringHelper {
         //region change Number language
         fun toEnglishNum(s: String): String {
             var s = s
-            val cApple: Char = 217.toChar()
-            val cNokia: Char = 219.toChar()
-
-            s = s.replace(String(charArrayOf(cApple, 160.toChar())), "0")
-            s = s.replace(String(charArrayOf(cApple, 161.toChar())), "1")
-            s = s.replace(String(charArrayOf(cApple, 162.toChar())), "2")
-            s = s.replace(String(charArrayOf(cApple, 163.toChar())), "3")
-            s = s.replace(String(charArrayOf(cApple, 164.toChar())), "4")
-            s = s.replace(String(charArrayOf(cApple, 165.toChar())), "5")
-            s = s.replace(String(charArrayOf(cApple, 166.toChar())), "6")
-            s = s.replace(String(charArrayOf(cApple, 167.toChar())), "7")
-            s = s.replace(String(charArrayOf(cApple, 168.toChar())), "8")
-            s = s.replace(String(charArrayOf(cApple, 169.toChar())), "9")
-
-            s = s.replace(String(charArrayOf(cNokia, 176.toChar())), "0")
-            s = s.replace(String(charArrayOf(cNokia, 177.toChar())), "1")
-            s = s.replace(String(charArrayOf(cNokia, 178.toChar())), "2")
-            s = s.replace(String(charArrayOf(cNokia, 179.toChar())), "3")
-            s = s.replace(String(charArrayOf(cNokia, 180.toChar())), "4")
-            s = s.replace(String(charArrayOf(cNokia, 181.toChar())), "5")
-            s = s.replace(String(charArrayOf(cNokia, 182.toChar())), "6")
-            s = s.replace(String(charArrayOf(cNokia, 183.toChar())), "7")
-            s = s.replace(String(charArrayOf(cNokia, 184.toChar())), "8")
-            s = s.replace(String(charArrayOf(cNokia, 185.toChar())), "9")
 
             s = s.replace("١", "1")
             s = s.replace("٢", "2")

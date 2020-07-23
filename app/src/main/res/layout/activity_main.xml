@@ -14,19 +14,4 @@
         android:layout_height="wrap_content"
         android:text="click" />
 
-    <com.faramarzaf.sdk.af_android_sdk.core.ui.customview.PasswordEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@drawable/shape_round_corner_button"
-        android:backgroundTint="#B0B3D1"
-        android:padding="4dp"
-        app:pet_backgroundIconColor="#E91919"
-        app:pet_customFontFamily="vazir_thin.ttf"
-        app:pet_hint="Password here..."
-        app:pet_srcIconHide="@drawable/ic_password_hide"
-        app:pet_srcIconShow="@drawable/ic_password_show"
-        app:pet_textColor="@color/black"
-        app:pet_textSize="8sp"
-        />
 </LinearLayout>

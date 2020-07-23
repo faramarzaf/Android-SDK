@@ -12,7 +12,7 @@ class ValidateHelper {
         }
 
         fun validateOtpInput(otpText: String): Boolean {
-            return !StringHelper.StringIsEmptyOrNull(otpText)
+            return !StringHelper.stringIsEmptyOrNull(otpText)
         }
     }
 
