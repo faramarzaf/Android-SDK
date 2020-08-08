@@ -1,11 +1,9 @@
 package com.faramarzaf.sdk.af_android_sdk.core.notification
 
 
-import android.app.DownloadManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
-import android.net.Uri
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
@@ -41,15 +39,36 @@ class NotificationProvider {
         }
 
 
-        fun downloadNotification(context: Context, url: String) {
-            val downloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager?
-            val uri = Uri.parse(url)
-            val request = DownloadManager.Request(uri)
-            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-            val reference = downloadManager!!.enqueue(request)
+        @RequiresApi(Build.VERSION_CODES.N)
+        fun expandNotification(context: Context, title: String, body: String, channelName: String, bigContentTitle: String, listExpand: Array<String?>, icon: Int, color: Int) {
+            val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager?
+            val notificationId = 2
+            val channelId = "channel-02"
+            val importance = NotificationManager.IMPORTANCE_HIGH
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                val mChannel = NotificationChannel(
+                    channelId, channelName, importance
+                )
+                notificationManager?.createNotificationChannel(mChannel)
+            }
+
+            val mBuilder = NotificationCompat.Builder(context, channelId)
+                .setSmallIcon(icon)
+                .setContentTitle(title)
+                .setColor(color)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setContentText(body)
+
+            val inboxStyle = NotificationCompat.InboxStyle()
+            inboxStyle.setBigContentTitle(bigContentTitle)
+
+            for (i in listExpand.indices)
+                inboxStyle.addLine(listExpand[i])
+
+            mBuilder.setStyle(inboxStyle)
+            mBuilder.setAutoCancel(true)
+            notificationManager?.notify(notificationId, mBuilder.build())
         }
-
     }
-
 
 }
