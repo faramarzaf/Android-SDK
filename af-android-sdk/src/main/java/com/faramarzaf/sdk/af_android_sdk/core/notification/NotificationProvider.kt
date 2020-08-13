@@ -21,9 +21,7 @@ class NotificationProvider {
             val channelId = "channel-01"
             val importance = NotificationManager.IMPORTANCE_HIGH
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                val mChannel = NotificationChannel(
-                    channelId, channelName, importance
-                )
+                val mChannel = NotificationChannel(channelId, channelName, importance)
                 notificationManager.createNotificationChannel(mChannel)
             }
 
@@ -46,9 +44,7 @@ class NotificationProvider {
             val channelId = "channel-02"
             val importance = NotificationManager.IMPORTANCE_HIGH
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                val mChannel = NotificationChannel(
-                    channelId, channelName, importance
-                )
+                val mChannel = NotificationChannel(channelId, channelName, importance)
                 notificationManager?.createNotificationChannel(mChannel)
             }
 
