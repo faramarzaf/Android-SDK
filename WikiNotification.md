@@ -25,4 +25,17 @@
         NotificationProvider.expandNotification(context, "This is title", "This is body","This is channel", "This is big content",changes, R.drawable.icon, Color.RED)
 
 ```
-
+- Java usage
+```java
+         String[] names = {"hello", "fara", "svf"};
+                NotificationProvider.Companion.expandNotification(
+                        this,
+                        "title",
+                        "body",
+                        "channel name",
+                        "Big title",
+                        names,
+                        R.drawable.icon,
+                        Color.BLUE
+                );
+```
