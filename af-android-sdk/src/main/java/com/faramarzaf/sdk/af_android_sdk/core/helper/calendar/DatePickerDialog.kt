@@ -10,6 +10,11 @@ import com.faramarzaf.sdk.af_android_sdk.core.enums.CalendarType
 import com.faramarzaf.sdk.af_android_sdk.core.interfaces.SetDateOnView
 import java.util.*
 
+/**
+ * @author Faramarz Afzali
+ * 13/august/2020
+ */
+
 class DatePickerDialog(type: CalendarType, callback: SetDateOnView) : DialogFragment(), DatePickerDialog.OnDateSetListener {
 
     private val callback: SetDateOnView? = callback

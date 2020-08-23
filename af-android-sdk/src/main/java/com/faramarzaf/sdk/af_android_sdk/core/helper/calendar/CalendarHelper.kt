@@ -5,6 +5,10 @@ import androidx.fragment.app.FragmentActivity
 import com.faramarzaf.sdk.af_android_sdk.core.enums.CalendarType
 import com.faramarzaf.sdk.af_android_sdk.core.interfaces.CalendarCallBack
 import com.faramarzaf.sdk.af_android_sdk.core.interfaces.SetDateOnView
+/**
+ * @author Faramarz Afzali
+ * 13/august/2020
+ */
 
 class CalendarHelper {
 
