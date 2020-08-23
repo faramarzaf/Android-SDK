@@ -1,5 +1,7 @@
 package com.faramarzaf.sdk.af_android_sdk.core.helper
 
+import java.security.SecureRandom
+
 class StringHelper {
 
     companion object {
@@ -11,7 +13,6 @@ class StringHelper {
             } catch (ex: Exception) {
                 return 0
             }
-
         }
 
 
@@ -21,7 +22,6 @@ class StringHelper {
             } catch (ex: Exception) {
                 return false
             }
-
         }
 
         //region change Number language
@@ -41,7 +41,6 @@ class StringHelper {
             s = s.replace("۸", "8")
             s = s.replace("۹", "9")
             s = s.replace("۰", "0")
-
             return s
         }
 
@@ -108,6 +107,19 @@ class StringHelper {
             return if (number / 10 == 0L) {
                 "۰$number"
             } else number.toString()
+        }
+
+
+        fun randomString(length: Int): String {
+            val root = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            val rand = SecureRandom()
+            val sb = StringBuilder(length)
+            for (i in 0 until length) {
+                val index = (root.length * Math.random()).toInt()
+                sb.append(root[index])
+            }
+            sb.append(root[rand.nextInt(root.length)])
+            return sb.toString()
         }
     }
 }

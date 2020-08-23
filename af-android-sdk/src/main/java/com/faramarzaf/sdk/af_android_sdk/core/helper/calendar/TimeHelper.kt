@@ -17,9 +17,9 @@ class TimeHelper {
 
     companion object {
 
-        fun getCurrentDate(yearFormat: String, monthFormat: String, dayFormat: String, monthIsCenter: Boolean): String {
+        fun getCurrentDate(yearFormat: String, monthFormat: String, dayFormat: String, monthInCenter: Boolean): String {
             var timeStamp: String? = null
-            when (monthIsCenter) {
+            when (monthInCenter) {
                 false -> {
                     timeStamp = SimpleDateFormat("$yearFormat/$dayFormat/$monthFormat").format(Calendar.getInstance().time)
                 }
@@ -39,13 +39,5 @@ class TimeHelper {
             val now = LocalDateTime.now()
             return dtf.format(now)
         }
-
-        @RequiresApi(Build.VERSION_CODES.O)
-        @JvmStatic
-        fun main(args: Array<String>) {
-            println(getCurrentTime())
-            println(getCurrentDate("yy", "MM", "dd", true))
-        }
     }
-
 }
