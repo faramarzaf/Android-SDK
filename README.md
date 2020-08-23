@@ -1,8 +1,5 @@
 # Android-SDK  
- 
-<p align="center">
-<img src="https://raw.github.com/faramarzaf/Android-SDK/master/Devices.gif" />
-</p>  
+
 
 [![](https://jitpack.io/v/faramarzaf/Android-SDK.svg)](https://jitpack.io/#faramarzaf/Android-SDK)
 
