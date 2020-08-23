@@ -2,8 +2,6 @@
 
 * MyPreferences    
 
-* TempConverter    
-
 * ClickGuard   
 
 ```kotlin
