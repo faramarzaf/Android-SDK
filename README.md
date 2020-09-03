@@ -19,7 +19,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	   implementation 'com.github.faramarzaf:Android-SDK:1.0.17'
+	   implementation 'com.github.faramarzaf:Android-SDK:1.0.18'
 	}
 
 
