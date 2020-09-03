@@ -20,7 +20,6 @@
 
         <TextView
             android:id="@+id/txtview_alert_dialog_text"
-            style="@style/TextViewTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"

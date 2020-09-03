@@ -8,10 +8,6 @@ import android.os.Build
 import android.annotation.TargetApi
 import android.provider.Settings
 
-/**
- * @author Faramarz Afzali
- * 3/sep/2020
- */
 
 class NetworkHelper {
 

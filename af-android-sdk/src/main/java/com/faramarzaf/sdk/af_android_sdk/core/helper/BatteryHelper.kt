@@ -9,6 +9,10 @@ import android.os.PowerManager
 import com.faramarzaf.sdk.af_android_sdk.core.interfaces.BatterySaveModeCallback
 import java.util.*
 
+/**
+ * @author Faramarz Afzali
+ * 3/sep/2020
+ */
 
 class BatteryHelper(private val context: Context) {
 
