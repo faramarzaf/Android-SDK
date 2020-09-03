@@ -46,6 +46,6 @@ android {
 # Contribution  
 Thank you so much for deciding to improve this tool.
 - First of all clone the repo.
-- Make branch with your github-username.
+- Make branch which it's name is your github-username.
 - Push your codes to new branch.
 - Finally create pull request and submit with full description.  
