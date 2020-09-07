@@ -73,8 +73,9 @@ class ScreenHelper {
             }
         }
 
-
-
+        fun getBrightness(context: Context): Int {
+            return Settings.System.getInt(context.contentResolver, Settings.System.SCREEN_BRIGHTNESS)
+        }
 
     }
 

@@ -1,6 +1,7 @@
 package com.faramarzaf.sdk.android
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.SeekBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -15,22 +16,20 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         seekbar.setOnSeekBarChangeListener(this)
-
-        btn_1.setOnClickListener {
-
-        }
     }
 
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-        ScreenHelper.setBrightness(this, progress,object :CallbackBrightnessValue{
+        ScreenHelper.setBrightness(this, progress, object : CallbackBrightnessValue {
             override fun minBrightness() {
-                Toast.makeText(this@MainActivity,"zero Brightness",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "zero Brightness", Toast.LENGTH_SHORT).show()
             }
 
             override fun maxBrightness() {
-                Toast.makeText(this@MainActivity,"255 Brightness",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "255 Brightness", Toast.LENGTH_SHORT).show()
             }
         })
+        Log.d("TAGLight", "noooor:  " + ScreenHelper.getBrightness(this).toString())
+
     }
 
     override fun onStartTrackingTouch(seekBar: SeekBar?) {
