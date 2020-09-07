@@ -12,13 +12,7 @@ import android.provider.Settings.ACTION_SECURITY_SETTINGS
  */
 
 class IntentHelper {
-    /**
-     * call phone
-     * send sms
-     * open url
-     * open setting page
-     * turn on location on setting page
-     */
+
     companion object {
 
         fun callPhone(context: Context, number: String) {

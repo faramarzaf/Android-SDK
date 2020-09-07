@@ -15,6 +15,12 @@
         android:text="click" />
 
 
-
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:min="0"
+        android:max="255"
+        />
 
 </LinearLayout>
