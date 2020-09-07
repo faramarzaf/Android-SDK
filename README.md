@@ -46,6 +46,5 @@ android {
 # Contribution  
 Thank you so much for deciding to improve this tool.
 - First of all fork and clone the repo.
-- Make branch which it's name is your github-username.
-- Push your codes to new branch.
+- Push your codes.
 - Finally create pull request and submit with full description.  
