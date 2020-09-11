@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.faramarzaf.sdk.af_android_sdk.core.helper.DeviceHelper
-import com.faramarzaf.sdk.af_android_sdk.core.util.RootUtil
 
 
 class MainActivity : AppCompatActivity() {
