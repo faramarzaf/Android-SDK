@@ -64,26 +64,6 @@ class StringHelper {
             return out
         }
 
-        fun toPersianNumberWithTAAppend(text: String): String {
-            if (text.length == 0) {
-                return ""
-            }
-            var out = ""
-            val length = text.length
-            for (i in 0 until length) {
-                val c = text[i]
-                if ('0' <= c && c <= '9') {
-                    val number = Integer.parseInt(c.toString())
-                    out += persianNumbers[number]
-                } else if (c == '٫') {
-                    out += '،'.toString()
-                } else {
-                    out += c
-                }
-            }
-            return "$out تا "
-        }
-
         fun getEnglishDurationString(seconds: Long): String {
             var seconds = seconds
             val hours = seconds / 3600

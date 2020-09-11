@@ -26,7 +26,7 @@ class KeyboardHelper {
             imm?.hideSoftInputFromWindow(view?.windowToken, 0)
         }
 
-        fun hideKeyboardThouchOutSide(activity: Activity): View.OnFocusChangeListener {
+        fun hideKeyboardTouchOutSide(activity: Activity): View.OnFocusChangeListener {
             return View.OnFocusChangeListener { view, focus ->
                 if (!focus) {
                     closeKeyboard(
