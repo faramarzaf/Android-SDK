@@ -15,3 +15,4 @@
  * TempConverter
  * TimeHelper
  * CalendarHelper
+ * DeviceHelper
