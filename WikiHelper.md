@@ -16,3 +16,4 @@
  * TimeHelper
  * CalendarHelper
  * DeviceHelper
+ * BatteryHelper
