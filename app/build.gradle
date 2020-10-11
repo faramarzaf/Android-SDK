@@ -9,8 +9,8 @@ android {
         applicationId "com.faramarzaf.sdk.android"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1019
-        versionName "1.0.19"
+        versionCode 1020
+        versionName "1.0.20"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }

@@ -2,9 +2,12 @@ package com.faramarzaf.sdk.af_android_sdk.core.helper
 
 import android.annotation.TargetApi
 import android.app.Activity
+import android.app.KeyguardManager
 import android.content.ContentResolver
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import android.graphics.Color
 import android.net.Uri
 import android.os.Build
@@ -14,6 +17,7 @@ import android.view.View
 import android.view.WindowManager
 import androidx.annotation.RequiresApi
 import androidx.annotation.RequiresPermission
+import com.faramarzaf.sdk.af_android_sdk.core.enums.ScreenOrientation
 import com.faramarzaf.sdk.af_android_sdk.core.interfaces.CallbackBrightnessValue
 import kotlin.math.pow
 import kotlin.math.sqrt
@@ -22,8 +26,6 @@ class ScreenHelper {
 
     companion object {
 
-
-        //region screen method
         fun getScreenSize(context: Context): Double {
             val dm = DisplayMetrics()
             (context as Activity).windowManager.defaultDisplay.getMetrics(dm)
@@ -58,7 +60,7 @@ class ScreenHelper {
         fun setBrightness(context: Context, brightness: Int, callback: CallbackBrightnessValue) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (Settings.System.canWrite(context)) {
-                    val cResolver: ContentResolver = context.contentResolver;
+                    val cResolver: ContentResolver = context.contentResolver
                     Settings.System.putInt(cResolver, Settings.System.SCREEN_BRIGHTNESS, brightness)
                     if (brightness == 0)
                         callback.minBrightness()
@@ -77,6 +79,23 @@ class ScreenHelper {
             return Settings.System.getInt(context.contentResolver, Settings.System.SCREEN_BRIGHTNESS)
         }
 
-    }
+        fun isLandscape(context: Context): Boolean {
+            val orientation = context.resources.configuration.orientation
+            return orientation == Configuration.ORIENTATION_LANDSCAPE
+        }
 
+        fun isScreenLocked(context: Context): Boolean {
+            val myKm: KeyguardManager = context.getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+            return myKm.isKeyguardLocked
+        }
+
+        fun setOrientation(activity: Activity, screenOrientation: ScreenOrientation) {
+            when (screenOrientation) {
+                ScreenOrientation.LANDSCAPE -> activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+                ScreenOrientation.PORTRAIT -> activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+                ScreenOrientation.UNDEFINE -> return
+            }
+        }
+
+    }
 }
