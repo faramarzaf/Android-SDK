@@ -1,6 +1,7 @@
 # Utils 
 
 * MyPreferences    
+* RootUtil
 
 * ClickGuard   
 
