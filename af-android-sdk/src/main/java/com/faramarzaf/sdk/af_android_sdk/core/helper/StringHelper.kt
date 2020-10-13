@@ -1,6 +1,7 @@
 package com.faramarzaf.sdk.af_android_sdk.core.helper
 
 import java.security.SecureRandom
+import java.text.DecimalFormat
 
 class StringHelper {
 
@@ -100,6 +101,10 @@ class StringHelper {
             }
             sb.append(root[rand.nextInt(root.length)])
             return sb.toString()
+        }
+
+        fun tripleSplitter(number: Long): String {
+            return DecimalFormat("###,###,###").format(number)
         }
     }
 }
