@@ -1,12 +1,14 @@
 package com.faramarzaf.sdk.af_android_sdk.core.helper
 
+import android.Manifest
+import android.annotation.TargetApi
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
-import java.util.*
 import android.os.Build
-import android.annotation.TargetApi
 import android.provider.Settings
+import androidx.annotation.RequiresPermission
+import java.util.*
 
 
 class NetworkHelper {
@@ -19,9 +21,7 @@ class NetworkHelper {
         }
 
         fun checkNetwork(context: Context): Boolean {
-            return isNetworkConnected(
-                context
-            )
+            return isNetworkConnected(context)
         }
 
         @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
@@ -31,6 +31,20 @@ class NetworkHelper {
             else
                 Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) !== 0
         }
-    }
 
+        @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
+        fun getNetworkType(context: Context): String {
+            val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            val networkInfo: List<NetworkInfo> = connectivityManager.allNetworkInfo.toList()
+            for (info in networkInfo) {
+                if (info.typeName.equals("WIFI", true))
+                    if (info.isConnected)
+                        return "Wifi"
+                    else if (info.typeName.equals("MOBILE", true))
+                        if (info.isConnected)
+                            return "Mobile data"
+            }
+            return ""
+        }
+    }
 }
