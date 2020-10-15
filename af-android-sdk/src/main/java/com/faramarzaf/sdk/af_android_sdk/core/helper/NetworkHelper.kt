@@ -20,10 +20,12 @@ class NetworkHelper {
             return Objects.requireNonNull(cm).activeNetworkInfo != null && Objects.requireNonNull<NetworkInfo>(cm.activeNetworkInfo).isConnected
         }
 
+        @JvmStatic
         fun checkNetwork(context: Context): Boolean {
             return isNetworkConnected(context)
         }
 
+        @JvmStatic
         @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
         fun isAirplaneModeOn(context: Context): Boolean {
             return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1)
@@ -32,6 +34,7 @@ class NetworkHelper {
                 Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) !== 0
         }
 
+        @JvmStatic
         @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
         fun getNetworkType(context: Context): String {
             val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

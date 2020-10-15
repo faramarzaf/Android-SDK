@@ -22,6 +22,7 @@ private var TAG = GlideHelper::class.java.simpleName
 class GlideHelper {
     companion object {
 
+        @JvmStatic
         fun roundedCorners(context: Context, url: String, radius: Int, imageView: ImageView) {
             Glide.with(context)
                     .load(url)
@@ -29,6 +30,7 @@ class GlideHelper {
                     .into(imageView)
         }
 
+        @JvmStatic
         fun circularImage(context: Context, url: String, imageView: ImageView) {
             Glide.with(context)
                     .load(url)
@@ -36,6 +38,7 @@ class GlideHelper {
                     .into(imageView)
         }
 
+        @JvmStatic
         fun loadImageIntoImageView(context: Context, url: String, imageView: AppCompatImageView) {
             Glide
                     .with(context)
@@ -62,6 +65,7 @@ class GlideHelper {
                     .into(imageView)
         }
 
+        @JvmStatic
         fun loadDrawableIntoImageView(context: Context, drawable: Drawable, imageView: AppCompatImageView) {
             Glide
                     .with(context)

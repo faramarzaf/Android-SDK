@@ -16,22 +16,27 @@ class DeviceHelper {
 
     companion object {
 
+        @JvmStatic
         fun getModel(): String {
             return Build.MODEL
         }
 
+        @JvmStatic
         fun getId(): String {
             return Build.ID
         }
 
+        @JvmStatic
         fun getManufacturer(): String {
             return Build.MANUFACTURER
         }
 
+        @JvmStatic
         fun getApiLevel(): String {
             return Build.VERSION.SDK_INT.toString()
         }
 
+        @JvmStatic
         fun isTablet(activity: Activity): Boolean {
             val metrics = DisplayMetrics()
             activity.windowManager.defaultDisplay.getMetrics(metrics)

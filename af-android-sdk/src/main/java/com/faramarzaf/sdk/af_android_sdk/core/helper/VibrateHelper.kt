@@ -9,6 +9,7 @@ import java.util.*
 class VibrateHelper {
     companion object {
 
+        @JvmStatic
         fun vibrate(context: Context, duration: Long) {
             val vibe = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

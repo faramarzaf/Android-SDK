@@ -14,6 +14,7 @@ class NotificationProvider {
 
     companion object {
 
+        @JvmStatic
         @RequiresApi(Build.VERSION_CODES.N)
         fun simpleNotification(context: Context, title: String, body: String, channelName: String, icon: Int, color: Int) {
             val notificationManager: NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -36,7 +37,7 @@ class NotificationProvider {
             notificationManager.notify(notificationId, mBuilder.build())
         }
 
-
+        @JvmStatic
         @RequiresApi(Build.VERSION_CODES.N)
         fun expandNotification(context: Context, title: String, body: String, channelName: String, bigContentTitle: String, listExpand: Array<String?>, icon: Int, color: Int) {
             val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager?
@@ -66,5 +67,4 @@ class NotificationProvider {
             notificationManager?.notify(notificationId, mBuilder.build())
         }
     }
-
 }

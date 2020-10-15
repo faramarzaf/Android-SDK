@@ -17,6 +17,7 @@ class TimeHelper {
 
     companion object {
 
+        @JvmStatic
         fun getCurrentDate(yearFormat: String, monthFormat: String, dayFormat: String, monthInCenter: Boolean): String {
             var timeStamp: String? = null
             when (monthInCenter) {
@@ -32,7 +33,7 @@ class TimeHelper {
             return timeStamp
         }
 
-
+        @JvmStatic
         @RequiresApi(Build.VERSION_CODES.O)
         fun getCurrentTime(): String? {
             val dtf = DateTimeFormatter.ofPattern("HH:mm:ss")

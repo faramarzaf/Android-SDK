@@ -8,6 +8,7 @@ class StringHelper {
     companion object {
         private val persianNumbers = arrayOf("۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹")
 
+        @JvmStatic
         fun convertStringToInteger(value: String): Int {
             try {
                 return Integer.parseInt(value)
@@ -16,7 +17,7 @@ class StringHelper {
             }
         }
 
-
+        @JvmStatic
         fun stringIsEmptyOrNull(string: String?): Boolean {
             try {
                 return string == null || string.length == 0 || string.isEmpty() || string == "null" || string == ""
@@ -25,7 +26,7 @@ class StringHelper {
             }
         }
 
-        //region change Number language
+        @JvmStatic
         fun toEnglishNum(s: String): String {
             var s = s
 
@@ -45,6 +46,7 @@ class StringHelper {
             return s
         }
 
+        @JvmStatic
         fun toPersianNumber(text: String): String {
             if (text.length == 0) {
                 return ""
@@ -65,6 +67,7 @@ class StringHelper {
             return out
         }
 
+        @JvmStatic
         fun getEnglishDurationString(seconds: Long): String {
             var seconds = seconds
             val hours = seconds / 3600
@@ -73,6 +76,7 @@ class StringHelper {
             return twoDigitString(minutes) + " : " + twoDigitString(seconds)
         }
 
+        @JvmStatic
         fun getFarsiDurationString(seconds: Long): String {
             var seconds = seconds
             val hours = seconds / 3600
@@ -81,6 +85,7 @@ class StringHelper {
             return toPersianNumber(twoDigitString(minutes) + " : " + twoDigitString(seconds))
         }
 
+        @JvmStatic
         fun twoDigitString(number: Long): String {
             if (number == 0L) {
                 return "۰۰"
@@ -90,7 +95,7 @@ class StringHelper {
             } else number.toString()
         }
 
-
+        @JvmStatic
         fun randomString(length: Int): String {
             val root = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
             val rand = SecureRandom()
@@ -103,6 +108,7 @@ class StringHelper {
             return sb.toString()
         }
 
+        @JvmStatic
         fun tripleSplitter(number: Long): String {
             return DecimalFormat("###,###,###").format(number)
         }

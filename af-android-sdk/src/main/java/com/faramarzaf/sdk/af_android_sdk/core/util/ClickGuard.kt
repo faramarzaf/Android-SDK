@@ -17,6 +17,7 @@ class ClickGuard {
     companion object {
         private var mLastClickTime: Long = 0
 
+        @JvmStatic
         fun guardView(view: View, delay: Long, callback: DoGuardTask) {
             view.setOnClickListener { v ->
                 if (SystemClock.elapsedRealtime() - mLastClickTime < delay) {
@@ -27,7 +28,7 @@ class ClickGuard {
             }
         }
 
-
+        @JvmStatic
         fun guardView(view: List<View>, delay: Long, doGuardTask: DoGuardTask?) {
             for (i in view.indices) {
                 view[i].setOnClickListener(View.OnClickListener { v ->
@@ -40,6 +41,4 @@ class ClickGuard {
             }
         }
     }
-
-
 }

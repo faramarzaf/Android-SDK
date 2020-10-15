@@ -7,12 +7,9 @@ class ValidateHelper {
 
     companion object {
 
+        @JvmStatic
         fun isValidEmail(target: CharSequence): Boolean {
             return !TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches()
-        }
-
-        fun validateOtpInput(otpText: String): Boolean {
-            return !StringHelper.stringIsEmptyOrNull(otpText)
         }
     }
 

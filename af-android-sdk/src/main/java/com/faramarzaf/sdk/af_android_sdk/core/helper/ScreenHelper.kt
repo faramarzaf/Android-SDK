@@ -26,6 +26,7 @@ class ScreenHelper {
 
     companion object {
 
+        @JvmStatic
         fun getScreenSize(context: Context): Double {
             val dm = DisplayMetrics()
             (context as Activity).windowManager.defaultDisplay.getMetrics(dm)
@@ -34,14 +35,17 @@ class ScreenHelper {
             return sqrt(x + y)
         }
 
+        @JvmStatic
         fun getScreenWidth(context: Context): Int {
             return context.resources.displayMetrics.widthPixels
         }
 
+        @JvmStatic
         fun getScreenHeight(context: Context): Int {
             return context.resources.displayMetrics.heightPixels
         }
 
+        @JvmStatic
         @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
         fun hideToolbar(activity: Activity) {
             val window = activity.window
@@ -55,6 +59,7 @@ class ScreenHelper {
          *
          * max brightness 255
          */
+        @JvmStatic
         @TargetApi(Build.VERSION_CODES.M)
         @RequiresPermission(android.Manifest.permission.WRITE_SETTINGS)
         fun setBrightness(context: Context, brightness: Int, callback: CallbackBrightnessValue) {
@@ -75,20 +80,24 @@ class ScreenHelper {
             }
         }
 
+        @JvmStatic
         fun getBrightness(context: Context): Int {
             return Settings.System.getInt(context.contentResolver, Settings.System.SCREEN_BRIGHTNESS)
         }
 
+        @JvmStatic
         fun isLandscape(context: Context): Boolean {
             val orientation = context.resources.configuration.orientation
             return orientation == Configuration.ORIENTATION_LANDSCAPE
         }
 
+        @JvmStatic
         fun isScreenLocked(context: Context): Boolean {
             val myKm: KeyguardManager = context.getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
             return myKm.isKeyguardLocked
         }
 
+        @JvmStatic
         fun setOrientation(activity: Activity, screenOrientation: ScreenOrientation) {
             when (screenOrientation) {
                 ScreenOrientation.LANDSCAPE -> activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE

@@ -15,6 +15,8 @@ class CounterDown {
     companion object {
         private lateinit var countDownTimer: CountDownTimer
         private lateinit var message: String
+
+        @JvmStatic
         fun printer(duration: Long, interval: Long, textView: TextView, disableColor: Int, enableColor: Int, retrySentence: String, farsiTimer: Boolean) {
             textView.isEnabled = false
             textView.setTextColor(disableColor)
@@ -37,5 +39,4 @@ class CounterDown {
             countDownTimer.start()
         }
     }
-
 }

@@ -11,10 +11,12 @@ class TextViewHelper {
 
     companion object {
 
+        @JvmStatic
         fun underlineTextView(textView: TextView) {
             textView.paintFlags = textView.paintFlags or Paint.UNDERLINE_TEXT_FLAG
         }
 
+        @JvmStatic
         @RequiresApi(Build.VERSION_CODES.O)
         fun justifyTextView(textView: TextView) {
             textView.justificationMode = JUSTIFICATION_MODE_INTER_WORD
