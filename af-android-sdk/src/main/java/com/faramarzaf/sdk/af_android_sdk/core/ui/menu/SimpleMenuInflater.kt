@@ -15,9 +15,9 @@ import com.faramarzaf.sdk.af_android_sdk.core.interfaces.CallbackPopUpMenu
 class SimpleMenuInflater {
 
     companion object {
-        fun showPopUpMenu(
-            context: Context, title: List<String>, view: View, callback: CallbackPopUpMenu
-        ) {
+
+        @JvmStatic
+        fun showPopUpMenu(context: Context, title: List<String>, view: View, callback: CallbackPopUpMenu) {
             val menu = PopupMenu(context, view)
             for (i in title) {
                 menu.menu.add(i)
@@ -29,9 +29,8 @@ class SimpleMenuInflater {
             menu.show()
         }
 
-        fun iconPopUpMenu(
-            context: Context, view: View, layoutMenu: Int, callback: CallbackPopUpMenu
-        ) {
+        @JvmStatic
+        fun iconPopUpMenu(context: Context, view: View, layoutMenu: Int, callback: CallbackPopUpMenu) {
             val menu = PopupMenu(context, view)
             menu.inflate(layoutMenu)
             menu.setOnMenuItemClickListener {

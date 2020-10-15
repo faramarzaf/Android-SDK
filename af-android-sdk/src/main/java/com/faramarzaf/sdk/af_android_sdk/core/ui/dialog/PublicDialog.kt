@@ -6,10 +6,9 @@ import com.faramarzaf.sdk.af_android_sdk.core.interfaces.DialogCallback
 
 class PublicDialog {
 
-
     companion object {
 
-
+        @JvmStatic
         fun yesNoDialog(context: Context, title: String, message: String, textYes: String, textNo: String, icon: Int, callback: DialogCallback) {
             AlertDialog.Builder(context)
                 .setTitle(title)
@@ -23,8 +22,5 @@ class PublicDialog {
                 .setIcon(icon)
                 .show()
         }
-
     }
-
-
 }

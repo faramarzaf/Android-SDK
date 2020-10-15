@@ -15,7 +15,6 @@ import com.google.android.material.snackbar.Snackbar
 
 class SimpleSnackbar {
 
-
     companion object {
 
         private lateinit var snackbar: Snackbar
@@ -24,6 +23,7 @@ class SimpleSnackbar {
          *Simple snackbar without action just include text
          */
 
+        @JvmStatic
         fun show(view: View, text: String, backgroundColor: Int, textColor: Int, isShortTime: Boolean) {
 
             if (isShortTime)
@@ -42,6 +42,7 @@ class SimpleSnackbar {
         /**
          *Simple snackbar with font preferences
          */
+        @JvmStatic
         fun show(context: Context, view: View, text: String, asset: String, backgroundColor: Int, textColor: Int, isShortTime: Boolean) {
 
             if (isShortTime)
@@ -62,7 +63,7 @@ class SimpleSnackbar {
         /**
          *Snackbar with action and callBack
          */
-
+        @JvmStatic
         fun show(view: View, text: String, textAction: String, backgroundColor: Int, textColor: Int, textActionColor: Int, isShortTime: Boolean, callback: CallbackSnackBar) {
 
             if (isShortTime)
@@ -87,7 +88,7 @@ class SimpleSnackbar {
         /**
          *Snackbar with font preferences
          */
-
+        @JvmStatic
         fun show(context: Context, view: View, text: String, textAction: String, backgroundColor: Int, textColor: Int, textActionColor: Int, asset: String, isShortTime: Boolean, callback: CallbackSnackBar) {
 
             if (isShortTime)
@@ -120,6 +121,4 @@ class SimpleSnackbar {
             }
         }
     }
-
-
 }
