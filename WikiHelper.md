@@ -12,6 +12,7 @@
  * VibrateHelper
  * TextViewHelper
  * StringHelper
+ * ToastHelper
  * TempConverter
  * TimeHelper
  * CalendarHelper
