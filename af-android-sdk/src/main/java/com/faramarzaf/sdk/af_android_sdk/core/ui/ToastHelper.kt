@@ -14,7 +14,7 @@ import com.faramarzaf.sdk.af_android_sdk.core.helper.StringHelper.Companion.stri
  * 28/oct/2020
  */
 
-class EzToast private constructor() {
+class ToastHelper private constructor() {
 
     private var icon = 0
     private var duration = 0
@@ -34,7 +34,7 @@ class EzToast private constructor() {
     private var mTxtContent: TextView? = null
 
     class Builder(context: Context?) {
-        var toast = EzToast()
+        private var toast = ToastHelper()
         fun setMessage(message: String?): Builder {
             toast.message = message
             return this
@@ -75,7 +75,7 @@ class EzToast private constructor() {
             return this
         }
 
-        fun build(): EzToast {
+        fun build(): ToastHelper {
             toast.setLayoutView()
             return toast
         }

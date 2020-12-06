@@ -3,7 +3,7 @@ package com.faramarzaf.sdk.android
 import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
-import com.faramarzaf.sdk.af_android_sdk.core.ui.EzToast
+import com.faramarzaf.sdk.af_android_sdk.core.ui.ToastHelper
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         btntoast.setOnClickListener {
 
-            EzToast.Builder(this)
+            ToastHelper.Builder(this)
                 .setMessage("hello")
                 .setTextColor("#457787")
                 .setTextSize(15)
