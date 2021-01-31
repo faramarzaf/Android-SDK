@@ -1,6 +1,6 @@
 # Utils 
 
-* MyPreferences    
+* MyPreferences (*deprecated!*)
 * RootUtil
 
 * ClickGuard   
@@ -12,6 +12,42 @@ ClickGuard.guardView(view, delay, object : DoGuardTask {
             }
         })
 ```
+
+* MyDataStore   
+
+```kotlin
+
+ 
+// Write in Data Store.
+
+  lifecycleScope.launch {
+            MyDataStore(context).writeString("key-string", "hello i am test")
+            MyDataStore(context).writeBoolean("key-boolean", true)
+            MyDataStore(contexth).writeFloat("key-float", 46f)
+            MyDataStore(context).writeInteger("key-integer", 25)
+            MyDataStore(context).writeLong("key-long", 365L)
+        }
+        
+        
+// Read from Data Store.    
+
+        lifecycleScope.launch {
+            val value1 = MyDataStore(context).readString("key-string")
+            val value2 = MyDataStore(context).readFloat("key-float")
+            val value3 = MyDataStore(context).readInteger("key-integer")
+            val value4 = MyDataStore(context).readLong("key-long")
+            val value5 = MyDataStore(context).readBoolean("key-boolean")
+        }
+        
+// Clear all data of Data Store.  
+    
+    lifecycleScope.launch {
+            MyDataStore(this@ActivitySplash).clearAll()
+        }
+    
+```
+
+
 
 * CounterDown  
 
