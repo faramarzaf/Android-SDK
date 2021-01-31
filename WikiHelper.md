@@ -18,3 +18,4 @@
  * CalendarHelper
  * DeviceHelper
  * BatteryHelper
+ * RecyclerviewHelper
