@@ -2,11 +2,7 @@ package com.faramarzaf.sdk.af_android_sdk.core.util
 
 import android.content.Context
 import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.clear
-
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.preferencesKey
+import androidx.datastore.preferences.core.*
 
 import androidx.datastore.preferences.createDataStore
 import kotlinx.coroutines.flow.first
@@ -97,4 +93,9 @@ class MyDataStore(context: Context) {
         }
     }
 
+    suspend fun clearAllTest() {
+        dataStore.edit {
+            it.remove(preferencesKey("mydatastore"))
+        }
+    }
 }
