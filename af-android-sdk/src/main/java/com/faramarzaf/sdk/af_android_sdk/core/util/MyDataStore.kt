@@ -92,10 +92,4 @@ class MyDataStore(context: Context) {
             it.clear()
         }
     }
-
-    suspend fun clearAllTest() {
-        dataStore.edit {
-            it.remove(preferencesKey("mydatastore"))
-        }
-    }
 }

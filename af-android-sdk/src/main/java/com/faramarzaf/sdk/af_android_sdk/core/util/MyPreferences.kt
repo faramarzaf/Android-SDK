@@ -8,8 +8,6 @@ import android.content.SharedPreferences
  * 14/jun/2020
  */
 
-@Deprecated("It is recommended not to use this class anymore due to the deprecation of Shared Preferences",
-    ReplaceWith("MyDataStore"))
 class MyPreferences {
 
     companion object Prefs {
