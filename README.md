@@ -12,21 +12,21 @@ Today, as projects become larger and more complex, a new way of developing softw
 
 # Setup
 Add it in your root build.gradle at the end of repositories:
-
+```gradle
 	allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
-  
+  ```
 
 Step 2. Add the dependency
-
+```gradle
 	dependencies {
 	   implementation 'com.github.faramarzaf:Android-SDK:1.0.26'
 	}
-
+```
 
 
 
