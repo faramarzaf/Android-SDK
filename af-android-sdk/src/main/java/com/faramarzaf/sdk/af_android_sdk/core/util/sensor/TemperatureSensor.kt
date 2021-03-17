@@ -6,6 +6,11 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 
+/**
+ * @author Faramarz Afzali
+ * 17/March/2021
+ */
+
 class TemperatureSensor(private val callback: TemperatureSensorCallback) {
 
 
