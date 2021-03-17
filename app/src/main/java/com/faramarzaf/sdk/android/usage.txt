@@ -1,0 +1,56 @@
+
+############################################# Sensor TEMP ########################################################
+
+SensorUtility.getTypeAmbientTemperatureSensor(this, object : TemperatureSensorCallback {
+            override fun sensorNotAvailable(message: String) {
+                Log.d("TAG000", "sensorNotAvailable: $message")
+            }
+
+            override fun sensorAvailable(message: String) {
+                Log.d("TAG000", "sensorAvailable: $message")
+            }
+
+            override fun onSensorChanged(value: Float) {
+                Log.d("TAG000", "onSensorChanged: $value")
+            }
+        })
+
+SensorUtility.getTypeTemperatureSensor(this,object :TemperatureSensorCallback{
+            override fun sensorNotAvailable(message: String) {
+                Log.d("TAG000", "sensorNotAvailable: $message")
+            }
+
+            override fun sensorAvailable(message: String) {
+                Log.d("TAG000", "sensorAvailable: $message")
+            }
+
+            override fun onSensorChanged(value: Float) {
+                Log.d("TAG000", "onSensorChanged: $value")
+            }
+        })
+############################################# Sensor TEMP ########################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
