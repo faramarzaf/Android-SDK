@@ -58,3 +58,42 @@ ClickGuard.guardView(view, delay, object : DoGuardTask {
             }
         })
 ```
+
+
+* SensorUtility
+```kotlin
+
+SensorUtility.getTypeAmbientTemperatureSensor(this, object : TemperatureSensorCallback {
+            override fun sensorNotAvailable(message: String) {
+                Log.d("TAG", "sensorNotAvailable: $message")
+            }
+
+            override fun sensorAvailable(message: String) {
+                Log.d("TAG", "sensorAvailable: $message")
+            }
+
+            override fun onSensorChanged(value: Float) {
+                Log.d("TAG", "onSensorChanged: $value")
+            }
+        })
+
+SensorUtility.getTypeTemperatureSensor(this,object :TemperatureSensorCallback{
+            override fun sensorNotAvailable(message: String) {
+                Log.d("TAG", "sensorNotAvailable: $message")
+            }
+
+            override fun sensorAvailable(message: String) {
+                Log.d("TAG", "sensorAvailable: $message")
+            }
+
+            override fun onSensorChanged(value: Float) {
+                Log.d("TAG", "onSensorChanged: $value")
+            }
+        })
+
+
+```
+
+
+
+
